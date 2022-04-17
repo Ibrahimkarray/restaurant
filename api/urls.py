@@ -1,0 +1,43 @@
+from django.urls import path
+
+from . import views
+from .viewsbyclass import viewrestaurant, viewavis, viewmeal, viewpersonne, viewmenu, viewlocation, viewusers
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('personne/', viewpersonne.getpersonne, name='personne'),
+    path('personne/create', viewpersonne.createpersonne, name='create-personne'),
+    path('personne/<str:id1>/update/', viewpersonne.updatepersonne, name='update-personne'),
+    path('personne/<str:id1>/delete/', viewpersonne.deletepersonne, name='delete-personne'),
+    path('personne/<str:id1>/', viewpersonne.getpersonnebyid, name='personneid'),
+    path('users/', viewusers.getpersonne, name='users'),
+    path('users/<str:id1>/update/', viewusers.updatepersonne, name='update-personne'),
+    path('users/<str:id1>/delete/', viewusers.deletepersonne, name='delete-personne'),
+    path('users/create', viewusers.createpersonne, name='personneid'),
+    path('users/<str:id1>/', viewusers.getpersonnebyid, name='usersid'),
+    path('location/', viewlocation.getpersonne, name='location'),
+    path('location/<str:id1>/update/', viewlocation.updatepersonne, name='update-personne'),
+    path('location/<str:id1>/delete/', viewlocation.deletepersonne, name='delete-personne'),
+    path('location/create/', viewlocation.createpersonne, name='personneid'),
+    path('location/<str:id1>/', viewlocation.getpersonnebyid, name='locationid'),
+    path('meal/', viewmeal.getpersonne, name='meal'),
+    path('meal/<str:id1>/update/', viewmeal.updatepersonne, name='update-personne'),
+    path('meal/<str:id1>/delete/', viewmeal.deletepersonne, name='delete-personne'),
+    path('meal/create/', viewmeal.createpersonne, name='personneid'),
+    path('meal/<str:id1>/', viewmeal.getpersonnebyid, name='mealid'),
+    path('menu/', viewmenu.getpersonne, name='menu'),
+    path('menu/<str:id1>/update/', viewmenu.updatepersonne, name='update-personne'),
+    path('menu/<str:id1>/delete/', viewmenu.deletepersonne, name='delete-personne'),
+    path('menu/create/', viewmenu.createpersonne, name='personneid'),
+    path('menu/<str:id1>/', viewmenu.getpersonnebyid, name='menuid'),
+    path('restaurant/', viewrestaurant.getpersonne, name='restaurant'),
+    path('restaurant/<str:id1>/update/', viewrestaurant.updatepersonne, name='update-personne'),
+    path('restaurant/<str:id1>/delete/', viewrestaurant.deletepersonne, name='delete-personne'),
+    path('restaurant/create/', viewrestaurant.createpersonne, name='personneid'),
+    path('restaurant/<str:id1>/', viewrestaurant.getpersonnebyid, name='restauranteid'),
+    path('avis/', viewavis.getpersonne, name='avis'),
+    path('avis/<str:id1>/update/', viewavis.updatepersonne, name='update-personne'),
+    path('avis/<str:id1>/delete/', viewavis.deletepersonne, name='delete-personne'),
+    path('avis/create/', viewavis.createpersonne, name='personneid'),
+    path('avis/<str:id1>/', viewavis.getpersonnebyid, name='avisid'),
+]
